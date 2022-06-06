@@ -18,18 +18,31 @@
             <li><router-link to="/investments">Investments</router-link></li>
             <li><router-link to="/contact">Contact</router-link></li>
         </ul>
-        <div class="mobile">
+        <ul ref="mobileNavHolder" class="nav-list-mobile" v-show="navigationToggled">
+            <li ref="link1"><router-link to="/">Home</router-link></li>
+            <li ref="link2"><router-link to="/about">About</router-link></li>
+            <li ref="link3"><router-link to="/investments">Investments</router-link></li>
+            <li ref="link4"><router-link to="/contact">Contact</router-link></li>
+        </ul>
+        <button class="mobile" @click="toggleNavigation">
             <div class="line1"></div>
             <div class="line1"></div>
             <div class="line1"></div>
-        </div> 
+        </button> 
       </div>
   </nav>
 </template>
 
 
 <script>
+ import { TimelineMax } from 'gsap';
+
 export default {
+  data() {
+    return {
+      navigationToggled: false
+    }
+  },
   mounted() {
     const navbar = document.getElementById('nav');
     window.onscroll = function() {
@@ -48,26 +61,31 @@ export default {
       }
     }
 
-  const navSlide = () => {
-  const mobile = document.querySelector('.mobile');
-  const navList = document.querySelector('.nav-list');
-  const navLinks = document.querySelectorAll('.nav-list li');
-
-  mobile.addEventListener('click', () => {
-   navList.classList.toggle('nav-active');
-
-  
-    for (const [index, link] of navLinks.entries()) {
-      if (link.style.animation) {
-        link.style.animation = "";
+    // this.navSlide();
+  },
+  methods: {
+    toggleNavigation() {
+      if (this.navigationToggled) {
+        this.animateOut();
       } else {
-        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.2}s`;
+        this.animateIn();
       }
+    },
+    animateIn() {
+      this.navigationToggled = true;
+      const { mobileNavHolder, link1, link2, link3, link4} = this.$refs;
+      const tl = new TimelineMax();
+      tl.fromTo(mobileNavHolder, 0.5, { xPercent: 100, autoAlpha: 0 }, { xPercent: 0, autoAlpha: 1 }, 0)
+      tl.staggerFrom([link1, link2, link3, link4], 0.3, { autoAlpha: 0, x: 100 }, 0.1, "-=0.5")
+    },
+    animateOut() {
+      const { mobileNavHolder } = this.$refs;
+      const tl = new TimelineMax();
+      tl.fromTo(mobileNavHolder, 0.5, { xPercent: 0, autoAlpha: 1 }, { xPercent: 100, autoAlpha: 0 }, 0)
+      tl.call(() => {
+        this.navigationToggled = false;
+      }, null,"+=0")
     }
-  });
-}
-
-navSlide();
   }
 } 
 </script>
@@ -168,6 +186,16 @@ navSlide();
 
   }
 
+  .nav-list-mobile {
+    display: none;
+  }
+
+  .mobile {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
 
   @media (min-width: 1024px) {
   .mobile  {
@@ -177,9 +205,13 @@ navSlide();
 
 @media (max-width: 1024px) {
 
-  .nav-list {
+  .nav-list { 
+    display: none;
+  }
+
+  .nav-list-mobile {
     position: absolute;
-    top: 0;;
+    top: 0;
     height: 100vh;
     width: 100%;
     right: 0;
@@ -189,18 +221,15 @@ navSlide();
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    transform: translateX(100%);
-    transition: 0.4s ease-in-out;
-    
   }
 
-  .nav-list li {
+  .nav-list-mobile li {
     margin-top: 5.5rem;
   
     transition: 0.4s ease-in-out;
   }
 
-  .nav-list li a{
+  .nav-list-mobile li a{
     color: #fff;
     margin-top: 10px;
     font-size: 1.5rem;

@@ -2,7 +2,7 @@
   <main id="fill">
     <section id="main-container"> 
         <flickity class="carousel" ref="flickity" :options="flickityOptions">
-        <div v-for="(image, index) in images" :key="index" class="carousel-cell" :style="{ 'background-image': `url(${require('@/assets/delight.jpg')})` }"></div>
+          <img v-for="(image, index) in images" :key="index" class="carousel-cell" :src="image">
         </flickity>
         <div class="text-container">
         <h2>Who we are</h2>
@@ -18,6 +18,37 @@
     </section> 
  </main>
 </template>
+
+<script>
+import Flickity from 'vue-flickity'
+
+  export default {
+    components: {
+       Flickity
+    },
+    data() {
+      return {
+        images: [
+          require("@/assets/worker2.jpg"),
+          require("@/assets/delight.jpg"),
+          require("@/assets/sample5.jpg")
+        ],
+        flickityOptions: {
+          draggable: true,
+          autoPlay: 4000,
+          fade: true,
+          loop: true,
+          pauseAutoPlayOnHover: false,
+          wrapAround: true,
+          imagesLoaded: true,
+          showPrevNextButtons: false
+        }
+      }
+    },
+
+  }
+</script>
+
 
 <style scoped>
 
@@ -84,9 +115,7 @@
   width: 100%;
   height: 400px;
   counter-increment: carousel-cell;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  object-fit: cover;
 }
  
  >>> .flickity-page-dots {
@@ -109,35 +138,4 @@
 } 
 </style>
 
-
-<script>
-import Flickity from 'vue-flickity'
-
-  export default {
-    components: {
-       Flickity
-    },
-    data() {
-      return {
-        images: [
-          "@/assets/worker2.jpg",
-          "@/assets/delight.jpg",
-          "@/assets/sample5.jpg"
-        ],
-        flickityOptions: {
-          draggable: true,
-          autoPlay: 4000,
-          fade: true,
-          loop: true,
-          pauseAutoPlayOnHover: false,
-          wrapAround: true,
-          imagesLoaded: true,
-          showPrevNextButtons: false
-        }
-      }
-    },
-
-   
-  }
-</script>
 
