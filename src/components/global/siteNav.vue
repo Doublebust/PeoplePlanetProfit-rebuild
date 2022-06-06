@@ -46,7 +46,7 @@ export default {
   mounted() {
     const navbar = document.getElementById('nav');
     window.onscroll = function() {
-      if(window.pageYOffset > 200) {
+      if(window.pageYOffset > 50) {
         navbar.classList.remove('top');
         // if(!scrolled) {
         //   navbar.style.transform = 'translateY(-150px)'; 
@@ -203,7 +203,7 @@ export default {
   }
 }
 
-@media (max-width: 1024px) {
+  @media (max-width: 1024px) {
 
   .nav-list { 
     display: none;

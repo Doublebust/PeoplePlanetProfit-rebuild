@@ -9,11 +9,10 @@
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid odit perferendis, accusamus assumenda et quasi beatae sunt totam atque vel!
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nisi reiciendis iste porro est. In exercitationem possimus aliquam quas quisquam.
         </p>
-        <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid odit perferendis, accusamus assumenda et quasi beatae sunt totam atque vel!
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid odit perferendis, accusamus assumenda et quasi beatae sunt totam atque vel!
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nisi reiciendis iste porro est. In exercitationem possimus aliquam quas quisquam.
         </p>
-        <div> <a href="">About us</a></div>
+        <div><a href="">About us</a></div>
         </div>  
     </section> 
  </main>
@@ -45,7 +44,6 @@ import Flickity from 'vue-flickity'
         }
       }
     },
-
   }
 </script>
 
@@ -107,11 +105,10 @@ import Flickity from 'vue-flickity'
 }
 
 .carousel {
-  position: relative;
   width: 48%;
 }
-.carousel-cell {
 
+.carousel-cell {
   width: 100%;
   height: 400px;
   counter-increment: carousel-cell;

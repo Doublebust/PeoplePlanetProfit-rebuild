@@ -17,7 +17,7 @@
       homeHeader,
       homeAbout,
       homeSecondary,
-      homeIcons
+      homeIcons,
     }
   }
 </script>

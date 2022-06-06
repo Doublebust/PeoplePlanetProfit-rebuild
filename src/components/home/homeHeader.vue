@@ -5,13 +5,9 @@
      <div class="text">
           <h2>Work towards a better world</h2>
           <p>Building a sustainable future for workers</p>
-          <button @click="scrollDown" id="btn">Learn more</button>
+          <button @click="scrollDown">Learn more</button>
      </div> 
-
-
    </header>
-
-
 </template>
 
 <script>
@@ -19,7 +15,7 @@
      methods: {
        scrollDown() {
          const height = document.querySelector('#nav').offsetHeight;
-         this.gsap.to(window, {duration: 0.8, scrollTo: {y: "#main-container", offsetY: height}});
+         this.gsap.to(window, {duration: 1, scrollTo: {y: "#main-container", offsetY: height}});
        }
      }
    }
@@ -27,8 +23,7 @@
 
 <style scoped>
 
-  #showcase
-{
+  #showcase {
   position: relative;
   right: 0;
   width: 100%;
@@ -41,14 +36,7 @@
   z-index: 0;
 }
 
-
-#showcase.active
-{
-  right: 300px;
-}
-
-#showcase video
-{
+#showcase video {
   position: fixed;
   top: 0;
   left: 0;
@@ -59,23 +47,17 @@
   z-index: 0;
 }
 
-.overlay
-{
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: #00000059;
-  /* background: #ff48002d; */
   mix-blend-mode: overlay;
 }
 
-
- 
-.text
-{
- 
+.text {
   max-width: 1200px;
   padding: 1.2rem;
   width: 100%;
@@ -87,8 +69,7 @@
   text-align: left;
 }
 
-.text h2
-{
+.text h2 {
   font-size: 3.8rem;
   font-weight: 800;
   color: #fff;
@@ -97,17 +78,14 @@
   text-transform: uppercase;
 }
 
-
-.text p
-{
+.text p {
   font-size: 1.1em;
   color: #fff;
   margin: 20px 0;
   font-weight: 400;
 }
 
-.text button
-{
+.text button {
   border: none;
   display: inline-block;
   font-size: 1em;
@@ -121,6 +99,7 @@
   border-radius: 20px;
   letter-spacing: 2px;
   transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
 }
 .text button:hover
 {
@@ -130,11 +109,6 @@
 
 @media (max-width: 991px)
 {
-  .showcase,
-  .showcase header
-  {
-    padding: 40px;
-  }
   .text h2
   {
     font-size: 3em;
@@ -144,7 +118,6 @@
     font-size: 2em;
   }
 }
-
 </style>
 
 
