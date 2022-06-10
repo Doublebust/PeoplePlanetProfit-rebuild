@@ -43,14 +43,11 @@
     margin: 0px auto;
     display: flex;
     padding: 0 1.2rem;
-    justify-content: space-between;   
+    gap: 23.2px;
     position: relative;
     bottom: 50px;
-}
-
-span {
- 
-}
+   
+  }
 
 .phone, .mail, .address {
     background: #fff;
@@ -103,6 +100,36 @@ span {
 
 .bottom-card a:hover {
     color: #ff4800;
+}
+
+
+@media (max-width: 921px) {
+   .card-container {
+       flex-flow: wrap;
+   }
+
+  .phone, .mail, .address {
+     width: 45%;
+  }
+}
+
+@media (max-width: 670px) {
+    .bottom-card ul, .bottom-card a {
+        font-size: 0.85rem;
+    }
+
+    .phone, .mail, .address {
+     width: 100%;
+     padding: 3rem 1rem !important;
+  }
+
+  
+}
+
+@media (max-width: 576px) {
+    .card-container {
+      bottom: 30px;
+    }
 }
 
 </style>

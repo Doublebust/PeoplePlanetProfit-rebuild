@@ -4,7 +4,7 @@
      <div class="overlay"></div>
      <div class="text">
           <h2>Work towards a better world</h2>
-          <p>Building a sustainable future for workers</p>
+          <p>Build a sustainable future for workers</p>
           <button @click="scrollDown">Learn more</button>
      </div> 
    </header>
@@ -107,17 +107,58 @@
   color: #fff;
 }
 
-@media (max-width: 991px)
-{
-  .text h2
-  {
-    font-size: 3em;
+
+  @media (min-width: 481px) and (max-width: 767px) {
+  .text h2 {
+     font-size: 3rem;
+   }
+  .text p {
+    font-size: 1rem;
+    margin: 15px 0px;
+   }
+
+   .text button {
+     font-size: 0.9em;
+     padding: 10px 25px;
+     margin-top: 0;
+   }
+ }
+
+ @media (min-width: 376px) and (max-width: 480px) {
+    .text h2 {
+     font-size: 2.3rem;
+   }
+     .text p {
+    font-size: 0.9rem;
+     margin: 15px 0px;
+  
+   }
+
+   .text button {
+     font-size: 0.8em;
+     padding: 10px 20px;
+     margin-top: 0;
+   }
   }
-  .text h3
-  {
-    font-size: 2em;
+
+  @media (max-width: 375px) {
+
+    .text h2 {
+     font-size: 2rem;
+   }
+     .text p {
+    font-size: 0.85rem;
+     margin: 15px 0px;
+   }
+
+   .text button {
+     font-size: 0.75em;
+     padding: 10px 20px;
+     margin-top: 0;
+   }
   }
-}
+ 
+
 </style>
 
 

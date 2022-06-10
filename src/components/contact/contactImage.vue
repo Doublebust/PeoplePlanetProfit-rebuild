@@ -14,13 +14,15 @@
 
 <style scoped>
  #container {
-     background: url("@/assets/field4.jpg") no-repeat center / cover;
-     height: 45vh;
-     margin: 7rem 0rem 5rem 0rem;
+     background: url("@/assets/field3.jpg") no-repeat center / cover;
+     height: 50vh;
+     margin-top: 5rem;
+     margin-bottom: 5rem;
      position: relative;
      display: flex;
      align-items: center;
      justify-content: center;
+   
    
  }
 
@@ -66,10 +68,40 @@
  }
 
  .text-wrapper h2 {
-     font-size: 3rem;
+     font-size: 2.2rem;
      font-weight: 600;
-     text-transform: capitalize;
+     letter-spacing: 1px;
+      text-transform: uppercase;
    
+ }
+
+ @media  (max-width: 1023px) {
+   .text-wrapper h2{
+    font-size: 4vw;
+ }
+
+ .text-wrapper h5{
+     font-size: 2vw;
+     margin-bottom: 0.8rem;
+ }
+
+
+ }
+
+ @media (max-width: 576px)  {
+      .text-wrapper h2{
+    font-size: 4.5vw;
+ }
+
+ .text-wrapper h5{
+     font-size: 2.8vw;
+     letter-spacing: 2px;
+     margin-bottom: 0.5rem;
+ }
+
+ #container {
+   margin: 2rem 0rem;
+ }
  }
 
 

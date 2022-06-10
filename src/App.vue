@@ -31,6 +31,10 @@ import siteFooter from '@/components/global/siteFooter';
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body{
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
@@ -42,7 +46,9 @@ a {
     transition: 0.3s;
 }
 
-
+button {
+  cursor: pointer
+}
 
 ul {
     list-style: none;

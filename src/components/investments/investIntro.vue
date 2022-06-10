@@ -52,5 +52,27 @@
    line-height: 1.7;
 }
 
+
+@media (max-width: 576px) {
+    .invest-container {
+      bottom: 30px;
+    }
+}
+
+@media (max-width: 330px) {
+   .intro-text h2 {
+    font-size: 7.5vw;
+   }
+
+   .intro-text p {
+     font-size: 0.8rem;
+   }
+
+   span {
+     border-bottom: 2px solid #dc3d04;
+
+   }
+}
+
    
 </style>

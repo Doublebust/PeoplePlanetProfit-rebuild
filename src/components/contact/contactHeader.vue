@@ -39,7 +39,7 @@
 }
 
 .contact-banner-text {
-    margin-top:15rem;
+    margin-top:10rem;
    
 }
 
@@ -59,8 +59,31 @@
 
 .contact-banner p {
     font-size: 0.95rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 
+@media (max-width: 576px){
+ .contact-banner h2 {
+   font-size: 8.3vw;
+}
+
+ .contact-banner p {
+   font-size: 3.2vw;
+    
+}
+
+.contact-banner-text {
+    margin-top:5rem;
+   
+}
+
+#contact-hero {
+    height: 70vh;
+}
+
+}
+
+
+ 
 </style>
 

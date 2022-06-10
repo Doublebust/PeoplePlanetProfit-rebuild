@@ -42,7 +42,7 @@
 }
 
 .invest-banner-text {
-    margin-top:15rem;
+    margin-top:10rem;
    
 }
 
@@ -61,7 +61,29 @@
 }
 
 .invest-banner p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 400;
+}
+
+
+@media (max-width: 576px){
+ .invest-banner h2 {
+   font-size: 8.3vw;
+}
+
+ .invest-banner p {
+   font-size: 3.2vw;
+    
+}
+
+.invest-banner-text {
+    margin-top:5rem;
+   
+}
+
+#investment-hero {
+    height: 70vh;
+}
+
 }
  </style>

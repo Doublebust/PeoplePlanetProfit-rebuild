@@ -1,21 +1,23 @@
 <template>
   <main id="fill">
-    <section id="main-container"> 
-        <flickity class="carousel" ref="flickity" :options="flickityOptions">
+    <section id="main-container">
+    
+      <flickity class="carousel" ref="flickity" :options="flickityOptions">
           <img v-for="(image, index) in images" :key="index" class="carousel-cell" :src="image">
-        </flickity>
-        <div class="text-container">
+      </flickity>
+      <div class="text-container">
         <h2>Who we are</h2>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid odit perferendis, accusamus assumenda et quasi beatae sunt totam atque vel!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nisi reiciendis iste porro est. In exercitationem possimus aliquam quas quisquam.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nisi reiciendis iste porro est. In exercitationem possimus aliquam quas quisquam.
         </p>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid odit perferendis, accusamus assumenda et quasi beatae sunt totam atque vel!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nisi reiciendis iste porro est. In exercitationem possimus aliquam quas quisquam.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nisi reiciendis iste porro est. In exercitationem possimus aliquam quas quisquam.
         </p>
         <div><a href="">About us</a></div>
-        </div>  
+      </div>
+    
     </section> 
- </main>
+   </main>
 </template>
 
 <script>
@@ -28,8 +30,8 @@ import Flickity from 'vue-flickity'
     data() {
       return {
         images: [
-          require("@/assets/worker2.jpg"),
           require("@/assets/delight.jpg"),
+          require("@/assets/worker2.jpg"),
           require("@/assets/sample5.jpg")
         ],
         flickityOptions: {
@@ -105,10 +107,11 @@ import Flickity from 'vue-flickity'
 }
 
 .carousel {
+  position: relative;
   width: 48%;
 }
-
 .carousel-cell {
+
   width: 100%;
   height: 400px;
   counter-increment: carousel-cell;
@@ -133,6 +136,6 @@ import Flickity from 'vue-flickity'
 >>> .flickity-prev-next-button .flickity-button-icon {
   fill: #fff;
 } 
+
+
 </style>
-
-
